@@ -1,5 +1,4 @@
-// EDIT ONLY THESE TWO VALUES AFTER STRIPE + CLOUDFLARE ARE READY.
 window.PPB_CONFIG = {
-  PAYMENT_LINK_URL: "https://buy.stripe.com/REPLACE_ME",
-  WORKER_URL: "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev"
+  PAYMENT_LINK_URL: "https://buy.stripe.com/aFa4gy39e5a1gKY8qDdwc02",
+  WORKER_URL: "https://pinterest-profit-delivery.kmirtchmue.workers.dev"
 };
