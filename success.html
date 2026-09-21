@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Pinterest Profit Blueprint</title>
+  <style>
+    :root{--cream:#f6f1ea;--paper:#fffdf9;--ink:#111;--muted:#6e685f;--red:#8d1717;--line:#d9d2c8}
+    *{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+    .wrap{width:min(840px,92%);margin:auto;padding:70px 0}
+    .card{background:var(--paper);border:1px solid var(--line);padding:42px}
+    .eyebrow{color:var(--red);font-weight:800;letter-spacing:.15em;text-transform:uppercase;font-size:.75rem}
+    h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(2.8rem,7vw,5.3rem);line-height:.95;margin:.2em 0}
+    h1 em{color:var(--red);font-weight:500}
+    p{color:#403a34}.status{padding:15px 18px;background:#f0ebe4;border-left:3px solid var(--red);margin:24px 0}
+    .download{display:block;text-decoration:none;background:#111;color:#fff;padding:17px 20px;margin:12px 0;font-weight:800}
+    .download.bump{background:var(--red)}
+    .small{font-size:.86rem;color:var(--muted)}
+    .hidden{display:none}.error{color:#8d1717;font-weight:700}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="eyebrow">Pinterest Profit Blueprint</div>
+      <h1>Payment received.<br><em>Your files are ready.</em></h1>
+      <p id="intro">We are securely verifying your Stripe payment before unlocking the downloads.</p>
+      <div id="status" class="status">Checking payment…</div>
+      <div id="downloads"></div>
+      <p class="small">Download links are temporary for security. If they expire, reload this page using the original Stripe success link.</p>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script>
+  (async function () {
+    const status = document.getElementById("status");
+    const downloads = document.getElementById("downloads");
+    const sessionId = new URLSearchParams(location.search).get("session_id");
+
+    if (!sessionId) {
+      status.innerHTML = '<span class="error">Missing Stripe session ID.</span>';
+      return;
+    }
+
+    try {
+      const url = `${window.PPB_CONFIG.WORKER_URL}/verify?session_id=${encodeURIComponent(sessionId)}`;
+      const res = await fetch(url, { method: "GET" });
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Could not verify payment.");
+
+      if (data.status === "pending") {
+        status.textContent = "Your payment is still processing. Please refresh this page in a moment.";
+        return;
+      }
+
+      status.textContent = "Verified ✓";
+      document.getElementById("intro").textContent =
+        data.email ? `Thank you. Your purchase is unlocked for ${data.email}.` : "Thank you. Your purchase is unlocked.";
+
+      (data.downloads || []).forEach(item => {
+        const a = document.createElement("a");
+        a.className = "download" + (item.asset === "rescue" ? " bump" : "");
+        a.href = item.url;
+        a.textContent = item.label;
+        downloads.appendChild(a);
+      });
+
+      if (!data.downloads || !data.downloads.length) {
+        status.innerHTML = '<span class="error">Payment verified, but no product files were matched. Contact support.</span>';
+      }
+    } catch (err) {
+      status.innerHTML = `<span class="error">${err.message}</span>`;
+    }
+  })();
+  </script>
+</body>
+</html>
