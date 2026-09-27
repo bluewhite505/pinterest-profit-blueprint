@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pinterest Profit Blueprint</title>
-  <meta name="description" content="Turn Pinterest searches into clicks, leads, and digital product sales with a simple search-first system." />
+  <title>Pinterest Profit Blueprint — Turn Searches Into Clicks + Sales</title>
+  <meta name="description" content="A practical Pinterest system for digital product sellers: find buyer searches, create click-focused Pins, connect them to one clear offer, and know what to fix." />
   <style>
     :root{
       --cream:#f6f1ea;
@@ -12,100 +12,75 @@
       --ink:#111111;
       --muted:#6e685f;
       --red:#8d1717;
+      --red2:#b92a2a;
       --line:#d9d2c8;
       --soft:#eee8df;
+      --green:#1f5b43;
       --max:1120px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      background:var(--cream);
-      color:var(--ink);
-      font-family:Arial, Helvetica, sans-serif;
-      line-height:1.55;
+      margin:0;background:var(--cream);color:var(--ink);
+      font-family:Arial,Helvetica,sans-serif;line-height:1.55;
     }
     .wrap{width:min(var(--max),92%);margin:auto}
-    .serif{font-family:Georgia, "Times New Roman", serif}
+    .serif{font-family:Georgia,"Times New Roman",serif}
     .eyebrow{
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-weight:700;
-      font-size:.78rem;
-      color:var(--red);
+      letter-spacing:.16em;text-transform:uppercase;font-weight:800;
+      font-size:.76rem;color:var(--red)
     }
     .topbar{
-      border-bottom:1px solid var(--line);
-      padding:18px 0;
-      background:rgba(246,241,234,.94);
-      position:sticky;
-      top:0;
-      z-index:20;
-      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);padding:14px 0;
+      background:rgba(246,241,234,.96);position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(8px)
     }
     .topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
+    .brand{font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.88rem}
     .btn{
-      display:inline-block;
-      text-decoration:none;
-      background:var(--red);
-      color:#fff;
-      padding:14px 22px;
-      border-radius:999px;
-      font-weight:800;
-      transition:.2s ease;
-      box-shadow:0 8px 24px rgba(141,23,23,.16);
+      display:inline-block;text-decoration:none;background:var(--red);color:#fff;
+      padding:15px 22px;border-radius:999px;font-weight:900;
+      transition:.2s ease;box-shadow:0 8px 24px rgba(141,23,23,.16)
     }
     .btn:hover{transform:translateY(-1px);filter:brightness(.96)}
-    .btn.secondary{
-      background:transparent;color:var(--ink);border:1px solid var(--ink);box-shadow:none
-    }
+    .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--ink);box-shadow:none}
 
-    .hero{
-      padding:78px 0 56px;
-      border-bottom:1px solid var(--line);
-    }
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+    .hero{padding:66px 0 46px;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
     h1{
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(3.25rem,7vw,6.8rem);
-      line-height:.92;
-      letter-spacing:-.045em;
-      margin:.18em 0 .25em;
-      font-weight:500;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(3.1rem,6.6vw,6.6rem);
+      line-height:.94;letter-spacing:-.045em;margin:.18em 0 .23em;font-weight:500
     }
     h1 .red{color:var(--red);font-style:italic}
-    .hero p{font-size:1.18rem;max-width:690px;color:#312e2a}
-    .price-line{margin:28px 0 22px;display:flex;align-items:end;gap:12px;flex-wrap:wrap}
-    .price{font:700 2.3rem/1 Georgia,serif}
+    .hero-copy{font-size:1.16rem;max-width:700px;color:#312e2a}
+    .objections{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 6px}
+    .chip{
+      border:1px solid var(--line);background:var(--paper);padding:9px 12px;
+      border-radius:999px;font-weight:800;font-size:.86rem;color:#3c3732
+    }
+    .mechanism{
+      margin:20px 0 0;padding:18px 20px;background:#111;color:#fff;
+      border-radius:14px;font-weight:800
+    }
+    .mechanism span{color:#d9d2c8;font-weight:500}
+    .price-line{margin:26px 0 18px;display:flex;align-items:end;gap:12px;flex-wrap:wrap}
+    .price{font:700 2.5rem/1 Georgia,serif}
     .micro{font-size:.88rem;color:var(--muted)}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .proofline{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:#514b44;font-size:.92rem}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+    .proofline{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;color:#514b44;font-size:.9rem}
 
     .mockup{
-      min-height:560px;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(141,23,23,.09), transparent 34%),
-        linear-gradient(145deg,#eae3da,#faf6f0);
-      border:1px solid var(--line);
-      overflow:hidden;
+      min-height:560px;position:relative;display:flex;align-items:center;justify-content:center;
+      padding:32px;background:
+      radial-gradient(circle at 20% 10%, rgba(141,23,23,.10), transparent 34%),
+      linear-gradient(145deg,#eae3da,#faf6f0);
+      border:1px solid var(--line);overflow:hidden;border-radius:18px
     }
     .book{
-      width:72%;
-      max-width:360px;
-      aspect-ratio:.72;
-      background:#111;
-      color:#fff;
-      padding:38px 32px;
-      box-shadow:24px 28px 60px rgba(0,0,0,.22);
-      transform:rotate(-4deg);
-      position:relative;
-      z-index:2;
+      width:72%;max-width:360px;aspect-ratio:.72;background:#111;color:#fff;
+      padding:38px 32px;box-shadow:24px 28px 60px rgba(0,0,0,.22);
+      transform:rotate(-4deg);position:relative;z-index:2
     }
     .book small{letter-spacing:.22em;text-transform:uppercase;font-size:.65rem}
     .book h2{font:500 clamp(2.7rem,5vw,4.2rem)/.95 Georgia,serif;margin:60px 0 16px}
@@ -113,60 +88,55 @@
     .book .rule{width:58px;height:2px;background:#a92c2c;margin:24px 0}
     .book p{font-family:Georgia,serif;font-style:italic;color:#e9e3dc;font-size:1rem}
     .card{
-      position:absolute;
-      right:7%;
-      bottom:7%;
-      width:48%;
-      max-width:250px;
-      background:var(--paper);
-      border:1px solid var(--line);
-      padding:20px;
-      box-shadow:12px 16px 35px rgba(0,0,0,.11);
-      transform:rotate(3deg);
-      z-index:3;
+      position:absolute;right:6%;bottom:6%;width:50%;max-width:270px;background:var(--paper);
+      border:1px solid var(--line);padding:20px;box-shadow:12px 16px 35px rgba(0,0,0,.11);
+      transform:rotate(3deg);z-index:3
     }
-    .card b{font-family:Georgia,serif;font-size:1.25rem}
+    .card b{font-family:Georgia,serif;font-size:1.2rem}
     .card ul{padding-left:18px;margin:12px 0 0;font-size:.84rem}
 
-    section{padding:76px 0;border-bottom:1px solid var(--line)}
-    .section-head{max-width:760px;margin-bottom:38px}
+    section{padding:68px 0;border-bottom:1px solid var(--line)}
+    .section-head{max-width:780px;margin-bottom:34px}
     h2{
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(2.45rem,5vw,4.8rem);
-      line-height:1;
-      letter-spacing:-.03em;
-      margin:.2em 0;
-      font-weight:500;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2.35rem,5vw,4.7rem);line-height:1;letter-spacing:-.03em;
+      margin:.2em 0;font-weight:500
     }
-    .lead{font-size:1.12rem;color:#39342f;max-width:760px}
-
-    .problem-grid,.module-grid,.bonus-grid,.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .box{
-      background:var(--paper);
-      border:1px solid var(--line);
-      padding:28px;
-    }
-    .box h3{font:600 1.45rem/1.15 Georgia,serif;margin:0 0 10px}
+    .lead{font-size:1.1rem;color:#39342f;max-width:760px}
+    .grid2,.module-grid,.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .box{background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:12px}
+    .box h3{font:600 1.4rem/1.15 Georgia,serif;margin:0 0 10px}
     .box p{margin:0;color:#4c463f}
-    .num{color:var(--red);font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+    .num{color:var(--red);font-weight:900;letter-spacing:.08em;margin-bottom:10px}
+    .tag{color:var(--red);font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;font-weight:900}
 
-    .money-map{
-      background:#111;color:#fff;padding:40px;
-      display:grid;grid-template-columns:repeat(4,1fr);gap:16px
+    .bridge{
+      background:#111;color:#fff;padding:42px;border-radius:16px
     }
-    .money-map div{border-left:1px solid #4b4b4b;padding-left:18px}
-    .money-map b{display:block;color:#fff;font-family:Georgia,serif;font-size:1.2rem;margin-bottom:6px}
-    .money-map span{color:#cfc9c1;font-size:.92rem}
+    .bridge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+    .bridge-step{border-left:1px solid #4b4b4b;padding-left:16px}
+    .bridge-step b{display:block;font-family:Georgia,serif;font-size:1.16rem;margin-bottom:6px}
+    .bridge-step span{color:#cfc9c1;font-size:.9rem}
 
-    .modules .box{min-height:210px}
-    .modules .box .tag{color:var(--red);font-size:.76rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
+    .callout{
+      background:var(--paper);border:1px solid var(--line);padding:26px 28px;border-radius:14px;
+      display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start
+    }
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--red);margin-top:7px}
+    .callout b{display:block;margin-bottom:5px;font-size:1.05rem}
 
-    .bonus-grid{grid-template-columns:repeat(3,1fr)}
-    .bonus-grid .box:nth-child(4),.bonus-grid .box:nth-child(5){grid-column:span 1}
-    .value{font-weight:800;color:var(--red);margin-top:12px}
+    .stack{
+      display:grid;grid-template-columns:1fr 1fr;gap:10px
+    }
+    .stack div{
+      background:var(--paper);border:1px solid var(--line);padding:16px;border-radius:10px;
+      font-size:.95rem
+    }
+    .stack b{display:block;margin-bottom:4px}
 
     .cta-panel{
-      background:#111;color:white;padding:54px;
+      background:#111;color:white;padding:50px;border-radius:16px;
       display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center
     }
     .cta-panel h2{margin:0;color:white}
@@ -174,31 +144,32 @@
     .cta-panel .btn{background:#fff;color:#111;box-shadow:none}
     .price-big{font:700 3rem/1 Georgia,serif;margin-bottom:14px}
 
-    details{
-      background:var(--paper);border:1px solid var(--line);padding:20px 22px
-    }
-    summary{cursor:pointer;font-weight:800}
+    details{background:var(--paper);border:1px solid var(--line);padding:20px 22px;border-radius:10px}
+    summary{cursor:pointer;font-weight:900}
     details p{color:#4b453f}
-
-    footer{padding:40px 0 60px;color:#625c55;font-size:.9rem}
+    footer{padding:38px 0 56px;color:#625c55;font-size:.9rem}
     .tiny{font-size:.78rem;color:#7a736b}
+    .sticky-mobile{display:none}
 
     @media(max-width:850px){
-      .hero-grid{grid-template-columns:1fr}
+      .hero-grid,.grid2,.module-grid,.faq-grid,.grid3{grid-template-columns:1fr}
       .mockup{min-height:500px}
-      .problem-grid,.module-grid,.faq-grid{grid-template-columns:1fr}
-      .bonus-grid{grid-template-columns:1fr}
-      .money-map{grid-template-columns:1fr 1fr}
+      .bridge-grid{grid-template-columns:1fr 1fr}
       .cta-panel{grid-template-columns:1fr}
       .topbar .btn{display:none}
+      .sticky-mobile{
+        display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:50
+      }
+      .sticky-mobile .btn{display:block;text-align:center;width:100%}
+      body{padding-bottom:82px}
     }
     @media(max-width:520px){
-      .hero{padding-top:48px}
-      .money-map{grid-template-columns:1fr}
+      .hero{padding-top:44px}
+      .bridge-grid{grid-template-columns:1fr}
       .mockup{min-height:430px}
       .book{width:80%;padding:28px 24px}
-      .card{width:55%;right:3%;bottom:4%}
-      .cta-panel{padding:34px 26px}
+      .card{width:58%;right:2%;bottom:3%}
+      .cta-panel{padding:32px 24px}
     }
   </style>
 </head>
@@ -214,22 +185,38 @@
   <header class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">Pinterest strategy for digital product sellers</div>
-        <h1>Turn Pinterest searches into <span class="red">clicks + sales.</span></h1>
-        <p>
-          A simple search-first system for digital product sellers who want Pinterest
-          to become a traffic and sales channel — without paid ads, a huge following,
-          or living on social media.
+        <div class="eyebrow">For digital product sellers who are done posting random Pins</div>
+
+        <h1>
+          Stop chasing views.<br>
+          Build a Pinterest path that gets <span class="red">found, clicked + bought.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Pinterest Profit Blueprint shows you how to connect buyer searches,
+          click-focused Pins, and one clear offer — so Pinterest becomes a traffic
+          and sales system instead of another content treadmill.
         </p>
+
+        <div class="objections">
+          <span class="chip">No huge following</span>
+          <span class="chip">No paid ads</span>
+          <span class="chip">No posting all day</span>
+        </div>
+
+        <div class="mechanism">
+          One product → buyer searches → click-focused Pins → clear offer.
+          <span>That is the path this Blueprint helps you build.</span>
+        </div>
 
         <div class="price-line">
           <div class="price">$49</div>
-          <div class="micro">one-time payment · instant access</div>
+          <div class="micro">one-time payment · instant digital access</div>
         </div>
 
         <div class="hero-actions">
           <a class="btn" href="#" data-checkout-link>Get Pinterest Profit Blueprint</a>
-          <a class="btn secondary" href="#inside">See what's inside</a>
+          <a class="btn secondary" href="#inside">See exactly what's inside</a>
         </div>
 
         <div class="proofline">
@@ -246,15 +233,16 @@
           <div class="rule"></div>
           <p>A practical Pinterest system for digital product sellers.</p>
         </div>
+
         <div class="card">
           <b>Inside the Blueprint</b>
           <ul>
-            <li>The Money Map</li>
-            <li>Pinterest Setup</li>
-            <li>SEO That Gets Found</li>
+            <li>Money Map</li>
+            <li>Buyer-search SEO</li>
             <li>Pins That Get Clicked</li>
             <li>Pinterest-to-Product Funnel</li>
-            <li>Track & Scale</li>
+            <li>155 Hooks + Copy Vault</li>
+            <li>30-Day Planner</li>
           </ul>
         </div>
       </div>
@@ -264,33 +252,62 @@
   <section>
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">The problem</div>
-        <h2>Pretty Pins are not the business model.</h2>
+        <div class="eyebrow">If Pinterest feels random, this is why</div>
+        <h2>Views are not the goal. A clean path to the offer is.</h2>
         <p class="lead">
-          Pinterest can send attention. But attention only becomes revenue when your
-          search topic, Pin, destination, and offer work together.
+          Most Pinterest problems happen in one of four places. The Blueprint helps you
+          identify which one is leaking before you waste time making more content.
         </p>
       </div>
-      <div class="problem-grid">
+
+      <div class="grid2">
         <div class="box">
           <div class="num">01</div>
-          <h3>You post without search demand.</h3>
-          <p>Your content looks good, but it is not built around what the right buyer is already looking for.</p>
+          <h3>You are posting without buyer search demand.</h3>
+          <p>The Pin can look great and still reach people who were never likely to buy.</p>
         </div>
         <div class="box">
           <div class="num">02</div>
-          <h3>Your Pin gets seen but not clicked.</h3>
-          <p>The keyword may be right, but the promise, visual, or angle is not earning the next step.</p>
+          <h3>Your Pins get seen but do not earn the click.</h3>
+          <p>The search topic may be right, but the hook, angle, visual, or promise is weak.</p>
         </div>
         <div class="box">
           <div class="num">03</div>
-          <h3>Your clicks do not turn into sales.</h3>
-          <p>The Pin and landing page are disconnected, the CTA is weak, or the offer does not feel like the natural next step.</p>
+          <h3>The click lands on the wrong message.</h3>
+          <p>The Pin creates one expectation and the landing page answers a different one.</p>
         </div>
         <div class="box">
           <div class="num">04</div>
-          <h3>You do not know what to fix.</h3>
-          <p>You end up changing everything instead of finding the exact leak in impressions, clicks, leads, or sales.</p>
+          <h3>You do not know what to fix next.</h3>
+          <p>You change everything instead of finding the leak in impressions, clicks, leads, or sales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="bridge">
+        <div class="eyebrow" style="color:#d75d5d">The Pinterest Money Map</div>
+        <h2 style="color:#fff;margin-top:10px">A simpler way to think about Pinterest sales.</h2>
+
+        <div class="bridge-grid">
+          <div class="bridge-step">
+            <b>1. Search Demand</b>
+            <span>Find what your buyer is already looking for.</span>
+          </div>
+          <div class="bridge-step">
+            <b>2. Offer Fit</b>
+            <span>Match that search to one relevant product or next step.</span>
+          </div>
+          <div class="bridge-step">
+            <b>3. Click Path</b>
+            <span>Use stronger hooks, angles, visuals, and CTAs to earn the click.</span>
+          </div>
+          <div class="bridge-step">
+            <b>4. Sale</b>
+            <span>Make the landing page feel like the natural continuation of the Pin.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -299,56 +316,64 @@
   <section>
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">The framework</div>
-        <h2>The Pinterest Money Map</h2>
-        <p class="lead">A simple path that connects discovery to revenue.</p>
+        <div class="eyebrow">Built for the exact problems digital sellers hit</div>
+        <h2>You do not need more random Pins. You need better decisions.</h2>
       </div>
-      <div class="money-map">
-        <div><b>Search Demand</b><span>Find what people are already searching for.</span></div>
-        <div><b>Offer Fit</b><span>Match that demand with a useful, relevant offer.</span></div>
-        <div><b>Click Path</b><span>Guide the buyer from Pin to a focused next step.</span></div>
-        <div><b>Sale</b><span>Turn qualified attention into revenue.</span></div>
+
+      <div class="grid3">
+        <div class="callout">
+          <div class="dot"></div>
+          <div><b>Getting views but not clicks?</b><span>Use the click-focused Pin framework and angle system.</span></div>
+        </div>
+        <div class="callout">
+          <div class="dot"></div>
+          <div><b>Getting clicks but no sales?</b><span>Fix the Pinterest-to-product message match and conversion path.</span></div>
+        </div>
+        <div class="callout">
+          <div class="dot"></div>
+          <div><b>Still guessing what to post?</b><span>Use search demand and the 155-hook swipe file to create clearer entry points.</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="inside" class="modules">
+  <section id="inside">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">What's inside</div>
-        <h2>Six modules. One complete path.</h2>
+        <div class="eyebrow">What you get</div>
+        <h2>Six modules. One complete path from search to sale.</h2>
       </div>
 
       <div class="module-grid">
         <div class="box">
           <div class="tag">Module 01</div>
           <h3>The Money Map</h3>
-          <p>Understand how search demand, offer fit, the click path, and conversion connect before you create more content.</p>
+          <p>See how search demand, offer fit, the click path, and conversion connect before you create more content.</p>
         </div>
         <div class="box">
           <div class="tag">Module 02</div>
           <h3>Pinterest Setup That Sells</h3>
-          <p>Set up your business account, profile, boards, and positioning so the right people understand what you offer.</p>
+          <p>Set up your business account, profile, boards, and positioning so the right buyer understands what you offer.</p>
         </div>
         <div class="box">
           <div class="tag">Module 03</div>
           <h3>Pinterest SEO That Gets Found</h3>
-          <p>Research keywords, match search intent, write clearer titles and descriptions, and build a searchable content foundation.</p>
+          <p>Research keywords, match search intent, and build Pins around searches with a reason to click.</p>
         </div>
         <div class="box">
           <div class="tag">Module 04</div>
           <h3>Pins That Get Clicked</h3>
-          <p>Turn visibility into outbound clicks with stronger hooks, clearer value, better angles, and a click-focused brief.</p>
+          <p>Turn visibility into outbound clicks with better hooks, clearer value, stronger angles, and a click-focused brief.</p>
         </div>
         <div class="box">
           <div class="tag">Module 05</div>
           <h3>Pinterest-to-Product Funnel</h3>
-          <p>Choose direct-sale or lead-first paths, improve message match, reduce friction, and make the next step obvious.</p>
+          <p>Improve message match, reduce friction, and make the sales page feel like the obvious next step.</p>
         </div>
         <div class="box">
           <div class="tag">Module 06</div>
           <h3>Track & Scale</h3>
-          <p>Read impressions, outbound clicks, leads, and sales so you know whether to scale, fix the Pin, fix the page, or replace.</p>
+          <p>Read impressions, outbound clicks, leads, and sales so you know whether to scale, fix, or replace.</p>
         </div>
       </div>
     </div>
@@ -357,36 +382,17 @@
   <section>
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">Included bonuses</div>
-        <h2>Less guessing. Faster execution.</h2>
+        <div class="eyebrow">Implementation bonuses</div>
+        <h2>Less blank-screen time. More execution.</h2>
       </div>
 
-      <div class="bonus-grid">
-        <div class="box">
-          <h3>155 Pinterest Hooks</h3>
-          <p>A swipe file for creating stronger Pin angles without staring at a blank screen.</p>
-          <div class="value">INCLUDED</div>
-        </div>
-        <div class="box">
-          <h3>Pin Copy Vault</h3>
-          <p>Ready-to-use structures for on-Pin text, titles, descriptions, CTAs, and alt text.</p>
-          <div class="value">INCLUDED</div>
-        </div>
-        <div class="box">
-          <h3>Pinterest Launch Checklist</h3>
-          <p>A practical QA checklist so your offer, Pins, destination, checkout, and tracking are ready.</p>
-          <div class="value">INCLUDED</div>
-        </div>
-        <div class="box">
-          <h3>Analytics + Scale Tracker</h3>
-          <p>Track the numbers that matter and make cleaner scale / fix / stop decisions.</p>
-          <div class="value">INCLUDED</div>
-        </div>
-        <div class="box">
-          <h3>30-Day Pinterest Planner</h3>
-          <p>A simple implementation plan that moves you from setup to publishing, learning, and optimization.</p>
-          <div class="value">INCLUDED</div>
-        </div>
+      <div class="stack">
+        <div><b>155 Pinterest Hooks</b>Angles you can adapt instead of starting every Pin from zero.</div>
+        <div><b>Pin Copy Vault</b>Structures for on-Pin text, titles, descriptions, CTAs, and alt text.</div>
+        <div><b>Pinterest Launch Checklist</b>QA your offer, Pins, destination, checkout, and tracking before publishing.</div>
+        <div><b>Analytics + Scale Tracker</b>See what is working and what needs to be fixed.</div>
+        <div><b>30-Day Pinterest Planner</b>Move from setup to publishing, learning, and optimization without guessing what comes next.</div>
+        <div><b>One clear system</b>Use the pieces together instead of collecting disconnected Pinterest tips.</div>
       </div>
     </div>
   </section>
@@ -395,13 +401,17 @@
     <div class="wrap">
       <div class="cta-panel">
         <div>
-          <div class="eyebrow" style="color:#d75d5d">Start building a clearer traffic path</div>
-          <h2>Get Pinterest Profit Blueprint.</h2>
-          <p>Learn the system, use the templates, and turn Pinterest into a strategic traffic channel for your digital products.</p>
+          <div class="eyebrow" style="color:#d75d5d">Stop posting random Pins</div>
+          <h2>Build the path from search to sale.</h2>
+          <p>
+            Get the full Pinterest Profit Blueprint, implementation tools, swipe files,
+            and 30-day planner in one digital bundle.
+          </p>
         </div>
         <div>
           <div class="price-big">$49</div>
           <a class="btn" href="#" data-checkout-link>Get Instant Access</a>
+          <div class="micro" style="color:#cfc9c1;margin-top:10px">One-time payment</div>
         </div>
       </div>
     </div>
@@ -421,20 +431,30 @@
         </details>
         <details>
           <summary>Do I need a large Pinterest following?</summary>
-          <p>No. The strategy is built around search demand and relevance rather than relying on follower count as the main traffic mechanism.</p>
+          <p>No. The system is built around search demand and relevance rather than follower count as the main traffic mechanism.</p>
         </details>
         <details>
           <summary>Do I need paid ads?</summary>
-          <p>No. This product focuses on organic Pinterest strategy. Paid advertising is not required to use the system.</p>
+          <p>No. The Blueprint focuses on organic Pinterest strategy. Paid advertising is not required to use the system.</p>
         </details>
         <details>
           <summary>What kind of products can I promote?</summary>
           <p>The examples are especially useful for digital products such as templates, guides, planners, workbooks, downloads, and similar offers.</p>
         </details>
+        <details>
+          <summary>What if I already get impressions but not sales?</summary>
+          <p>That is exactly why the system separates search demand, click performance, landing-page message match, and conversion so you can identify the leak instead of changing everything at once.</p>
+        </details>
+        <details>
+          <summary>What do I get immediately?</summary>
+          <p>You get the six-module Blueprint plus the 155 Hooks, Pin Copy Vault, Launch Checklist, Analytics + Scale Tracker, and 30-Day Pinterest Planner.</p>
+        </details>
       </div>
 
       <p class="tiny" style="margin-top:28px">
-        Results vary by niche, offer, market demand, content quality, and execution. This product provides strategy and implementation tools; it does not guarantee income or a specific level of traffic or sales.
+        Results vary by niche, offer, market demand, content quality, and execution.
+        This product provides strategy and implementation tools; it does not guarantee income
+        or a specific level of traffic or sales.
       </p>
     </div>
   </section>
@@ -446,10 +466,16 @@
     </div>
   </footer>
 
+  <div class="sticky-mobile">
+    <a class="btn" href="#" data-checkout-link>Get the Blueprint — $49</a>
+  </div>
+
   <script src="config.js"></script>
   <script>
     document.querySelectorAll('[data-checkout-link]').forEach(function (link) {
-      link.href = window.PPB_CONFIG.PAYMENT_LINK_URL;
+      if (window.PPB_CONFIG && window.PPB_CONFIG.PAYMENT_LINK_URL) {
+        link.href = window.PPB_CONFIG.PAYMENT_LINK_URL;
+      }
     });
   </script>
 </body>
