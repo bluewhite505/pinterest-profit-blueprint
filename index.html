@@ -109,6 +109,15 @@
     .product-visual figcaption strong{color:var(--ink)}
     .hero-product{grid-column:1/-1;width:100%;margin-top:2px}
     .hero-product figcaption{font-size:1rem;padding:18px 22px}
+    .hero-support{
+      grid-column:1/-1;display:grid;grid-template-columns:1.2fr .8fr;
+      gap:18px;align-items:stretch
+    }
+    .hero-support .mechanism{margin:0;display:flex;align-items:center}
+    .hero-support .proofline{
+      margin:0;background:var(--paper);border:1px solid var(--line);border-radius:14px;
+      padding:18px 20px;align-items:center
+    }
     .inside-product{max-width:900px;margin:0 auto 38px}
 
     section{padding:68px 0;border-bottom:1px solid var(--line)}
@@ -169,10 +178,11 @@
 
     @media(max-width:850px){
       .hero-shell,.grid2,.module-grid,.faq-grid,.grid3{grid-template-columns:1fr}
-      .hero-title,.hero-offer,.hero-product{grid-column:1}
+      .hero-title,.hero-offer,.hero-product,.hero-support{grid-column:1}
       .hero-title{order:1}
       .hero-product{order:2}
       .hero-offer{order:3}
+      .hero-support{order:4;grid-template-columns:1fr}
       .bridge-grid{grid-template-columns:1fr 1fr}
       .cta-panel{grid-template-columns:1fr}
       .topbar .btn{display:none}
@@ -219,17 +229,6 @@
           and sales system instead of another content treadmill.
         </p>
 
-        <div class="objections">
-          <span class="chip">No huge following</span>
-          <span class="chip">No paid ads</span>
-          <span class="chip">No posting all day</span>
-        </div>
-
-        <div class="mechanism">
-          One product → buyer searches → click-focused Pins → clear offer.
-          <span>That is the path this Blueprint helps you build.</span>
-        </div>
-
         <div class="price-line">
           <div class="price">$49</div>
           <div class="micro">one-time payment · instant digital access</div>
@@ -240,11 +239,6 @@
           <a class="btn secondary" href="#inside">See exactly what's inside</a>
         </div>
 
-        <div class="proofline">
-          <span>✓ Search-first strategy</span>
-          <span>✓ 6 practical modules</span>
-          <span>✓ 5 implementation bonuses</span>
-        </div>
       </div>
 
       <figure class="product-visual hero-product">
@@ -268,6 +262,19 @@
           <span>6 PDF modules + 5 bonuses · instant download</span>
         </figcaption>
       </figure>
+
+      <div class="hero-support">
+        <div class="mechanism">
+          One product → buyer searches → click-focused Pins → clear offer.
+          <span>That is the path this Blueprint helps you build.</span>
+        </div>
+
+        <div class="proofline">
+          <span>✓ Search-first strategy</span>
+          <span>✓ 6 practical modules</span>
+          <span>✓ 5 implementation bonuses</span>
+        </div>
+      </div>
     </div>
   </header>
 
