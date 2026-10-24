@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pinterest Profit Blueprint — Turn Searches Into Clicks + Sales</title>
   <meta name="description" content="A practical Pinterest system for digital product sellers: find buyer searches, create click-focused Pins, connect them to one clear offer, and know what to fix." />
+  <link rel="canonical" href="https://bluewhite505.github.io/pinterest-profit-blueprint/" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#8d1717" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bluewhite505.github.io/pinterest-profit-blueprint/" />
+  <meta property="og:title" content="Pinterest Profit Blueprint — Search. Click. Sell." />
+  <meta property="og:description" content="A complete Pinterest system with 6 practical modules and 5 implementation bonuses for digital product sellers." />
+  <meta property="og:image" content="https://bluewhite505.github.io/pinterest-profit-blueprint/assets/pinterest-profit-blueprint-social.png" />
+  <meta property="og:image:secure_url" content="https://bluewhite505.github.io/pinterest-profit-blueprint/assets/pinterest-profit-blueprint-social.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Pinterest Profit Blueprint with six PDF modules and five bonuses" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pinterest Profit Blueprint — Search. Click. Sell." />
+  <meta name="twitter:description" content="A complete Pinterest system with 6 practical modules and 5 implementation bonuses for digital product sellers." />
+  <meta name="twitter:image" content="https://bluewhite505.github.io/pinterest-profit-blueprint/assets/pinterest-profit-blueprint-social.png" />
   <style>
     :root{
       --cream:#f6f1ea;
@@ -45,15 +64,23 @@
     .btn:hover{transform:translateY(-1px);filter:brightness(.96)}
     .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--ink);box-shadow:none}
 
-    .hero{padding:66px 0 46px;border-bottom:1px solid var(--line)}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+    .hero{padding:54px 0 52px;border-bottom:1px solid var(--line)}
+    .hero-shell{
+      display:grid;grid-template-columns:minmax(0,1.2fr) minmax(340px,.8fr);
+      gap:36px 48px;align-items:end
+    }
+    .hero-title{grid-column:1}
+    .hero-offer{
+      grid-column:2;background:var(--paper);border:1px solid var(--line);
+      border-radius:18px;padding:30px;box-shadow:0 20px 54px rgba(44,35,27,.09)
+    }
     h1{
       font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(3.1rem,6.6vw,6.6rem);
-      line-height:.94;letter-spacing:-.045em;margin:.18em 0 .23em;font-weight:500
+      font-size:clamp(3.15rem,5.2vw,5.15rem);
+      line-height:.94;letter-spacing:-.045em;margin:.18em 0 0;font-weight:500
     }
     h1 .red{color:var(--red);font-style:italic}
-    .hero-copy{font-size:1.16rem;max-width:700px;color:#312e2a}
+    .hero-copy{font-size:1.18rem;max-width:700px;color:#312e2a;margin:0}
     .objections{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 6px}
     .chip{
       border:1px solid var(--line);background:var(--paper);padding:9px 12px;
@@ -80,6 +107,8 @@
       padding:14px 18px;color:#4c463f;font-size:.88rem;border-top:1px solid var(--line)
     }
     .product-visual figcaption strong{color:var(--ink)}
+    .hero-product{grid-column:1/-1;width:100%;margin-top:2px}
+    .hero-product figcaption{font-size:1rem;padding:18px 22px}
     .inside-product{max-width:900px;margin:0 auto 38px}
 
     section{padding:68px 0;border-bottom:1px solid var(--line)}
@@ -139,7 +168,11 @@
     .sticky-mobile{display:none}
 
     @media(max-width:850px){
-      .hero-grid,.grid2,.module-grid,.faq-grid,.grid3{grid-template-columns:1fr}
+      .hero-shell,.grid2,.module-grid,.faq-grid,.grid3{grid-template-columns:1fr}
+      .hero-title,.hero-offer,.hero-product{grid-column:1}
+      .hero-title{order:1}
+      .hero-product{order:2}
+      .hero-offer{order:3}
       .bridge-grid{grid-template-columns:1fr 1fr}
       .cta-panel{grid-template-columns:1fr}
       .topbar .btn{display:none}
@@ -151,6 +184,8 @@
     }
     @media(max-width:520px){
       .hero{padding-top:44px}
+      .hero-shell{gap:24px}
+      .hero-offer{padding:24px 20px}
       .bridge-grid{grid-template-columns:1fr}
       .product-visual figcaption{display:block;padding:13px 15px}
       .cta-panel{padding:32px 24px}
@@ -167,15 +202,17 @@
   </div>
 
   <header class="hero">
-    <div class="wrap hero-grid">
-      <div>
+    <div class="wrap hero-shell">
+      <div class="hero-title">
         <div class="eyebrow">For digital product sellers who are done posting random Pins</div>
 
         <h1>
           Stop chasing views.<br>
           Build a Pinterest path that gets <span class="red">found, clicked + bought.</span>
         </h1>
+      </div>
 
+      <div class="hero-offer">
         <p class="hero-copy">
           Pinterest Profit Blueprint shows you how to connect buyer searches,
           click-focused Pins, and one clear offer — so Pinterest becomes a traffic
@@ -210,14 +247,22 @@
         </div>
       </div>
 
-      <figure class="product-visual">
-        <img
-          src="assets/pinterest-profit-blueprint-hero.webp"
-          alt="Pinterest Profit Blueprint showing all six PDF modules and five implementation bonuses"
-          width="1600"
-          height="1200"
-          fetchpriority="high"
-        />
+      <figure class="product-visual hero-product">
+        <picture>
+          <source
+            media="(max-width: 700px)"
+            srcset="assets/pinterest-profit-blueprint-square.webp"
+            width="1080"
+            height="1080"
+          />
+          <img
+            src="assets/pinterest-profit-blueprint-hero.webp"
+            alt="Pinterest Profit Blueprint showing all six PDF modules and five implementation bonuses"
+            width="1600"
+            height="1200"
+            fetchpriority="high"
+          />
+        </picture>
         <figcaption>
           <strong>The complete Pinterest Profit Blueprint</strong>
           <span>6 PDF modules + 5 bonuses · instant download</span>
